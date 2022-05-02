@@ -1,0 +1,16 @@
+{
+  "name": "learnwebgl",
+  "version": "1.0.0",
+  "description": "学习webgl",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha 'test/**'"
+  },
+  "author": "simuel2333",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "4.3.6",
+    "mocha": "10.0.0"
+  }
+}
