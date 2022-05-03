@@ -39,5 +39,4 @@ webglTools.createProgram = (gl, vertexShader, fragmentShader) => {
     return undefined;
 }
 
-
 export default webglTools;

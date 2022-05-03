@@ -353,6 +353,55 @@ export class Mat3 extends Array {
     }
 
     /**
+     * 根据weight和height获取投影变换矩阵
+     */
+    static projection(width, height) {
+        return new Mat3(
+            2 / width, 0, -1,
+            0, -2 / height, 1,
+            0, 0, 1
+        )
+    }
+
+    translate(tx = 0, ty = 0) {
+        return this.multiply(Mat3.translate(tx, ty));
+    }
+
+    static translate(tx = 0, ty = 0) {
+        return new Mat3(
+            1, 0, tx,
+            0, 1, ty,
+            0, 0, 1
+        );
+    }
+
+    rotate(theta = 0) {
+        return this.multiply(Mat3.rotate(theta));
+    }
+
+    static rotate(theta = 0) {
+        let sinTheta = Math.sin(theta);
+        let cosTheta = Math.cos(theta);
+        return new Mat3(
+            cosTheta, -sinTheta, 0,
+            sinTheta, cosTheta, 0,
+            0, 0, 1
+        )
+    }
+
+    scale(sx = 1, sy = 1) {
+        return this.multiply(Mat3.scale(sx, sy));
+    }
+
+    static scale(sx = 1, sy = 1) {
+        return new Mat3(
+          sx, 0, 0,
+          0, sy, 0,
+          0, 0, 1
+        );
+    }
+
+    /**
      * 获取转置矩阵
      */
     get T() {

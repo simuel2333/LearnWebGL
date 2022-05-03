@@ -9,16 +9,8 @@
 <body>
 <canvas id="canvas"></canvas>
 
-<script type="importmap">
-    {
-        "imports": {
-            "webglTools": "./lib/webglTools.js"
-        }
-    }
-
-</script>
 <script type="module">
-    import webglTools from 'webglTools';
+    import webglTools from './lib/webglTools.js';
 
     let canvas = document.querySelector('#canvas');
     canvas.width = window.innerWidth;
